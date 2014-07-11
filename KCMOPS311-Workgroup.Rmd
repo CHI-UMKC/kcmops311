@@ -1,0 +1,24 @@
+# KCMO 311 data:  Work Groups
+efg, UMKC Center for Health Insights.  
+2013-12-12.  Last modified 2014-07-11.  
+
+## Frequency Counts of Kansas City, MO 311 Reports
+https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp  
+2014-07-11  
+
+```{r, echo=FALSE}
+setwd("C:/Data/Cities/KCMO/data-kcmo-org/KCMOPS311/")
+filename <-  "KCMOPS311-2014-07-11-113827.csv"
+d <- read.csv(filename, as.is=TRUE, colClasses="character")
+options(width=120)
+```
+The current file has `r nrow(d)` rows.
+
+## Work Groups
+
+Work Groups are thought to be associated only with certain Department(s).  A crosstab of WorkGroup by Department would be a bit large, however.  The set of WorkGroups for a particular Department could be extracted fairly easily.
+```{r}
+length(table(d$WORK.GROUP))
+
+data.frame(table(d$WORK.GROUP))
+```
