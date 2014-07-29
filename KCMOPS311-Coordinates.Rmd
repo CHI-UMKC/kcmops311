@@ -1,0 +1,100 @@
+# XCoordinate, YCoordinate, Latitude, Longitude
+efg, UMKC Center for Health Insights.  
+2014-07-21. 
+
+## Kansas City, MO 311 Data
+https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp  
+2014-07-11  
+
+```{r, echo=FALSE}
+setwd("C:/Data/Cities/KCMO/data-kcmo-org/KCMOPS311/")
+filename <-  "KCMOPS311-2014-07-11-113827.csv"
+d <- read.csv(filename, as.is=TRUE, colClasses="character")
+
+d$XCoordinate <- as.numeric(d$XCOORDINATE)
+d$YCoordinate <- as.numeric(d$YCOORDINATE)
+
+options(width=120)
+```
+The current file has `r nrow(d)` rows by `r ncol(d)` columns.
+
+### Extract latitude and longitude from ADDRESS.WITH.GEOCODE 
+```{r}
+library(stringr)
+x <- d$ADDRESS.WITH.GEOCODE
+splits <- strsplit(x, "\\(|,|)")
+d$latitude <-  as.numeric(str_trim(unlist(lapply(splits, "[", 3))))
+d$longitude <- as.numeric(str_trim(unlist(lapply(splits, "[", 4))))          
+```
+Let's look at raw plots to discover problems in the data. 
+
+Because of large number of points, let's create PNG graphics and display them.
+```{r, hide=TRUE}
+png("figures/LatLongPlotsRaw%d.png")
+plot(d$longitude, d$XCoordinate, main="XCoordinate vs Longitude (raw)")
+grid()
+plot(d$latitude,  d$YCoordinate, main="YCoordinate vs Latitude (raw)")
+grid()
+dev.off()        
+```
+
+![XCoordinate vs Longitude](figures/LatLongPlotsRaw1.png)
+
+![YCoordinate vs Latitude](figures/LatLongPlotsRaw2.png)
+
+### Data Cleanup
+
+A number of XCoordinate and YCoordinate values are zero:
+```{r}
+zero.coord <- d$XCoordinate == 0 | d$YCoordinate == 0
+sum(zero.coord)
+```               
+
+Latitude and Longitude sometimes is missing:
+```{r}
+missing.lat.long <- is.na(d$latitude) | is.na(d$longitude)
+sum(missing.lat.long)
+```
+
+Some Latitude and Longitude values need cleanup based on the raw plots above.
+```{r}
+problem.lat <- (d$latitude > 39.4) | (d$latitude < 38.8)
+sum(problem.lat, na.rm=TRUE)
+problem.lat[is.na(problem.lat)] <- FALSE
+sum(problem.lat)
+
+problem.long <- (d$longitude > -94.0)
+sum(problem.long, na.rm=TRUE)
+problem.long[is.na(problem.long)] <- FALSE
+sum(problem.long)
+```
+### Better plots
+
+For now, reject all problem records and plot charts with only "good" data.
+
+```{r}
+problems <- zero.coord | missing.lat.long | problem.lat | problem.long
+sum(problems)
+
+png("figures/LatLongPlots%d.png")
+
+plot(d$latitude[!problems],  d$YCoordinate[!problems], main="YCoordinate vs Latitude")
+grid()
+fit.X.lat <- lm(d$YCoordinate[!problems] ~ d$latitude[!problems])
+abline(fit.X.lat, col="red", lwd=3, lty="dotted")
+summary(fit.X.lat)
+
+plot(d$longitude[!problems], d$XCoordinate[!problems], main="XCoordinate vs Longitude")
+grid()
+fit.X.long <- lm(d$XCoordinate[!problems] ~ d$longitude[!problems])
+abline(fit.X.long, col="red", lwd=3, lty="dotted")
+summary(fit.X.long)
+
+dev.off()
+```
+![XCoordinate vs Longitude](figures/LatLongPlots1.png)
+
+![YCoordinate vs Latitude](figures/LatLongPlots2.png)   
+
+Regression lines on the charts above suggest linear relationships between the variable pairs.
+        
