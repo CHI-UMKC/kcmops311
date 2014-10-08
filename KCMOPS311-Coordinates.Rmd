@@ -1,14 +1,14 @@
 # XCoordinate, YCoordinate, Latitude, Longitude
 efg, UMKC Center for Health Insights.  
-2014-07-21. 
+2014-10-08. 
 
 ## Kansas City, MO 311 Data
 https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp  
-2014-07-11  
+2014-10-08  
 
 ```{r, echo=FALSE}
 setwd("C:/Data/Cities/KCMO/data-kcmo-org/KCMOPS311/")
-filename <-  "KCMOPS311-2014-07-11-113827.csv"
+filename <-  "KCMOPS311-2014-10-08-121800.csv"
 d <- read.csv(filename, as.is=TRUE, colClasses="character")
 
 d$XCoordinate <- as.numeric(d$XCOORDINATE)
@@ -32,15 +32,21 @@ Because of large number of points, let's create PNG graphics and display them.
 ```{r, hide=TRUE}
 png("figures/LatLongPlotsRaw%d.png")
 plot(d$longitude, d$XCoordinate, main="XCoordinate vs Longitude (raw)")
+plot(d$longitude, d$XCoordinate, main="XCoordinate vs Longitude (raw)", xlim=c(-94.8,-94.3))
 grid()
 plot(d$latitude,  d$YCoordinate, main="YCoordinate vs Latitude (raw)")
+plot(d$latitude,  d$YCoordinate, main="YCoordinate vs Latitude (raw)",  xlim=c(38.4, 39.4))
+plot(d$latitude,  d$YCoordinate, main="YCoordinate vs Latitude (raw)",  xlim=c(-94.7,-94.3))
 grid()
 dev.off()        
 ```
 
 ![XCoordinate vs Longitude](figures/LatLongPlotsRaw1.png)
+![XCoordinate vs Longitude](figures/LatLongPlotsRaw2.png)
 
-![YCoordinate vs Latitude](figures/LatLongPlotsRaw2.png)
+![YCoordinate vs Latitude](figures/LatLongPlotsRaw3.png)
+![YCoordinate vs Latitude](figures/LatLongPlotsRaw4.png)
+![YCoordinate vs Latitude](figures/LatLongPlotsRaw5.png)
 
 ### Data Cleanup
 
