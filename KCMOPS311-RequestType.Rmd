@@ -1,14 +1,14 @@
 # KCMO 311 data:  Request Types
-efg, UMKC Center for Health Insights.  
-2013-12-12.  Last modified 2014-10-08.  
+UMKC Center for Health Insights
+Earl F Glynn
+2013-12-12.  Last modified 2015-01-04.
 
 ## Frequency Counts of Kansas City, MO 311 Reports
-https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp  
-2014-10-08  
+https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp
+2015-01-03
 
 ```{r, echo=FALSE}
-setwd("C:/Data/Cities/KCMO/data-kcmo-org/KCMOPS311/")
-filename <-  "KCMOPS311-2014-10-08-121800.csv"
+filename <-  "KCMOPS311-2015-01-03-150046.csv"
 d <- read.csv(filename, as.is=TRUE, colClasses="character")
 options(width=120)
 ```

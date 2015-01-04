@@ -54,33 +54,33 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="kcmo-311-data-request-types" class="section level1">
 <h1>KCMO 311 data: Request Types</h1>
-<p>efg, UMKC Center for Health Insights.<br />2013-12-12. Last modified 2014-10-08.</p>
+<p>UMKC Center for Health Insights<br />Earl F Glynn<br />2013-12-12. Last modified 2015-01-04.</p>
 <div id="frequency-counts-of-kansas-city-mo-311-reports" class="section level2">
 <h2>Frequency Counts of Kansas City, MO 311 Reports</h2>
-<p><a href="https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp">https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp</a><br />2014-10-08</p>
-<p>The current file has 801834 rows.</p>
+<p><a href="https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp">https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp</a> 2015-01-03</p>
+<p>The current file has 819903 rows.</p>
 </div>
 <div id="request-types" class="section level2">
 <h2>Request Types</h2>
 <p>Perhaps keywords in the request types could be used to define categories?</p>
 <pre class="r"><code>length(table(d$REQUEST.TYPE))</code></pre>
-<pre><code>## [1] 593</code></pre>
+<pre><code>## [1] 594</code></pre>
 <pre class="r"><code>data.frame(table(d$REQUEST.TYPE))</code></pre>
 <pre><code>##                                                                                 Var1   Freq
-## 1                                                                  311 Action Center    518
-## 2                                                                  Abandoned Vehicle  17786
+## 1                                                                  311 Action Center    535
+## 2                                                                  Abandoned Vehicle  18128
 ## 3                                                      Accelerated Abatement Program    358
-## 4                                                           Action Center Escalation    107
+## 4                                                           Action Center Escalation    113
 ## 5                                                                  ADA Accessibility     20
-## 6                                                    Additional Information Required   1247
+## 6                                                    Additional Information Required   1282
 ## 7                                                Alley Cleaning (North of the River)     22
-## 8                        Alley Cleaning (South of 47th Street and West of BLue PKWY)    104
+## 8                        Alley Cleaning (South of 47th Street and West of BLue PKWY)    105
 ## 9                                              Alley Cleaning (South of 47th Street)     47
-## 10              Alley Cleaning (South of River to 47th Street and East of Blue PKWY)   1053
+## 10              Alley Cleaning (South of River to 47th Street and East of Blue PKWY)   1071
 ## 11                                    Alley Cleaning (South of River to 47th Street)    405
 ## 12                                                            Animal Admin Call Back   1210
-## 13                                                                   Animal At Large  13337
-## 14                                                                       Animal Bite   1331
+## 13                                                                   Animal At Large  14482
+## 14                                                                       Animal Bite   1360
 ## 15                                            Animal Concerns Buckner Jackson County    103
 ## 16                                          Animal Concerns Greenwood Jackson County    149
 ## 17                                             Animal Concerns Levacy Jackson County      8
@@ -91,7 +91,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 22                                      Animal Concerns Unity Village Jackson County      5
 ## 23                                       Animal Concers Unicorporated Jackson County    673
 ## 24                                                                    Animal Control  34638
-## 25                                                     Animal Control Administration   1013
+## 25                                                     Animal Control Administration   1058
 ## 26                                                                  Animal Emergency  14329
 ## 27                                           Animal Emergency Buckner Jackson County     34
 ## 28                                         Animal Emergency Greenwood Jackson County     34
@@ -100,20 +100,20 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 31                                       Animal Emergency Sugar Creek Jackson County      3
 ## 32                                    Animal Emergency Unincorporated Jackson County    212
 ## 33                                     Animal Emergency Unity Village Jackson County      4
-## 34                                                              Animal Investigation   3978
+## 34                                                              Animal Investigation   4249
 ## 35                                                           Automatic Meter Reading     28
 ## 36                                                     Automatic Meter Reading - VSI    195
-## 37                                                                    Aviation - All     85
-## 38                                                               Back Office Support    642
-## 39                                                                       Barking Dog   3608
+## 37                                                                    Aviation - All     87
+## 38                                                               Back Office Support    671
+## 39                                                                       Barking Dog   3719
 ## 40                                                           Barrier Removal Program      3
-## 41                                                                   Bedbugs Problem    255
+## 41                                                                   Bedbugs Problem    258
 ## 42                                                       Bicycle or Pedestrian Trail      8
-## 43                                                     Bridge Repair (All Districts)    453
+## 43                                                     Bridge Repair (All Districts)    460
 ## 44                                                           Bruce R Watkins Freeway     34
 ## 45                                                           Brush Creek Maintenance     14
-## 46                                               Building Code and Permit Violations   1937
-## 47                                                          Bulky Address Validation   1635
+## 46                                               Building Code and Permit Violations   1976
+## 47                                                          Bulky Address Validation   1653
 ## 48                                                                 Bulky Appointment  11159
 ## 49                                                     Bulky Appointment-  August 10     42
 ## 50                                                     Bulky Appointment-  August 17      1
@@ -284,11 +284,11 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 215                                                         Bulky Appointment JAN 27    147
 ## 216                                                         Bulky Appointment JAN 28    210
 ## 217                                                          Bulky Appointment JAN24    186
-## 218                                                             Bulky Pick-up Missed  15822
+## 218                                                             Bulky Pick-up Missed  16021
 ## 219                                                Bulky Pick Up Due to Flood Damage    197
-## 220                                                          Capital Projects Office    792
-## 221                                                      Catch Basin Repair Referral    321
-## 222                                            Catch Basins and Storm Water Concerns  11368
+## 220                                                          Capital Projects Office    823
+## 221                                                      Catch Basin Repair Referral    319
+## 222                                            Catch Basins and Storm Water Concerns  11576
 ## 223                                              Childhood Lead Poisoning Prevention     16
 ## 224                                                           City Clerks Office-All      1
 ## 225                                                City Maintained Property Addition     35
@@ -298,79 +298,79 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 229                      City Manager's Office-Capital Improvement Management Office      1
 ## 230                                       City Manager's Office-Emergency Management      1
 ## 231                      City Manager's Office-Public Improvement Advisory Committee      1
-## 232                                               City Managers Office-Action Center    398
-## 233                                              City Managers Office-Administration     68
+## 232                                               City Managers Office-Action Center    407
+## 233                                              City Managers Office-Administration     70
 ## 234                       City Managers Office-Capital Improvement Management Office    600
 ## 235                                         City Managers Office-City Communications      9
 ## 236                                        City Managers Office-Emergency Management     49
-## 237                       City Managers Office-Public Improvement Advisory Committee    754
-## 238                                       City Planning &amp; Development-Administration    187
+## 237                       City Managers Office-Public Improvement Advisory Committee    764
+## 238                                       City Planning &amp; Development-Administration    190
 ## 239                                                           Cleaning City Property     84
 ## 240                                                  Cleaning vacant Land Trust Lots    871
 ## 241                                                     Communicable Disease Control      3
-## 242                                        Completed Contractor Restoration Concerns    187
+## 242                                        Completed Contractor Restoration Concerns    196
 ## 243                                          Convention and Entertainment Center-All     30
 ## 244                                                    Cooling Center Transportation      3
-## 245                      Crack Sealing -(South of 47th Street and West of Blue PKWY)    102
+## 245                      Crack Sealing -(South of 47th Street and West of Blue PKWY)    104
 ## 246             Crack Sealing -(South of River to 47th Street and East of Blue PKWY)      7
-## 247                                                   Crack Sealing (North of River)    198
+## 247                                                   Crack Sealing (North of River)    201
 ## 248                                             Crack Sealing (South of 47th Street)     15
-## 249              Crack Sealing (South of River to 47th Street and East of Blue PKWY)     43
+## 249              Crack Sealing (South of River to 47th Street and East of Blue PKWY)     44
 ## 250                                    Crack Sealing (South of River to 47th Street)      8
-## 251                                                               Dangerous Building   4684
+## 251                                                               Dangerous Building   4840
 ## 252                                        Dangerous Building and Emergency Board Up      4
-## 253                                                     Dangerous Building Emergency    394
-## 254                                                              Dead Animal Pick-up  26401
+## 253                                                     Dangerous Building Emergency    396
+## 254                                                              Dead Animal Pick-up  27176
 ## 255                                                     Dead Tree on Land Trust Lots     54
-## 256                                                   Demolition Debris and Landfill     64
+## 256                                                   Demolition Debris and Landfill     65
 ## 257                                 Dispute of Assessment for NCS Property Abatement     32
-## 258                                         Ditch Cleaning (North from 27th Street )   1137
+## 258                                         Ditch Cleaning (North from 27th Street )   1162
 ## 259                                                  Ditch Cleaning (North of River)      1
-## 260                                            Ditch Cleaning (South of 27th Street)   1326
+## 260                                            Ditch Cleaning (South of 27th Street)   1342
 ## 261                                            Ditch Cleaning (South of 47th Street)      2
 ## 262                                   Ditch Cleaning (South of River to 47th Street)      1
-## 263                                                     Drug Abatement Response Team    380
-## 264                                                              Elevator Inspection     47
+## 263                                                     Drug Abatement Response Team    400
+## 264                                                              Elevator Inspection     48
 ## 265                                                      Emerald Ash Borer Questions     42
-## 266                                                   Emerald Ash Borer Tree Removal     27
+## 266                                                   Emerald Ash Borer Tree Removal     40
 ## 267                                           Emergency Animal Levacy Jackson County      4
 ## 268                                                    Emergency Home Repair Program    182
 ## 269                                                         Emergency Water Turn Off     37
-## 270                                                              Erosion or Sediment    185
-## 271                                                          Facilities - City Owned    159
+## 270                                                              Erosion or Sediment    188
+## 271                                                          Facilities - City Owned    168
 ## 272                                                                    Fence or Wall    190
 ## 273                                                        Field Services Escalation    741
-## 274                                                                    Finance - All     10
-## 275                                                                       Fire - All    313
-## 276                                                    Food Establishment Complaints   2182
-## 277                                                Forestry Customer Service Comment    203
+## 274                                                                    Finance - All     11
+## 275                                                                       Fire - All    319
+## 276                                                    Food Establishment Complaints   2294
+## 277                                                Forestry Customer Service Comment    228
 ## 278                                                   Good Neighbor Award Nomination     58
 ## 279                                    Google's FTTH Project Contractor Verification     25
 ## 280                                          Graffiti - Park Property Central Region     18
 ## 281                                            Graffiti - Park Property North Region     34
 ## 282                                            Graffiti - Park Property South Region      6
 ## 283                                                      Graffiti Abatement Training      5
-## 284                                                        Graffiti on City Property    294
+## 284                                                        Graffiti on City Property    297
 ## 285                                                     Graffiti on Private Property   1910
-## 286                                                                Graffiti on Signs    698
-## 287                                                     Graffiti on Streetlight Pole    110
-## 288                                                      Graffiti Removed by Citizen      7
+## 286                                                                Graffiti on Signs    707
+## 287                                                     Graffiti on Streetlight Pole    121
+## 288                                                      Graffiti Removed by Citizen      8
 ## 289                                               Guard Rail Repair (North of River)     48
-## 290                   Guard Rail Repair (South of 47th Street and West of Blue PKWY)     33
+## 290                   Guard Rail Repair (South of 47th Street and West of Blue PKWY)     36
 ## 291                                         Guard Rail Repair (South of 47th Street)     10
-## 292      Guard Rail Repair (South of the River to 47th Street and East of Blue PKWY)     31
+## 292      Guard Rail Repair (South of the River to 47th Street and East of Blue PKWY)     33
 ## 293                            Guard Rail Repair (South of the River to 47th Street)      5
-## 294                                                              Hazardous Structure   3282
+## 294                                                              Hazardous Structure   3280
 ## 295                                                                       Health-All   1236
-## 296                                                            Healthy Homes Program    157
+## 296                                                            Healthy Homes Program    163
 ## 297                                                             High Bill Adjustment      1
 ## 298                                                       High Water Bill Inspection      2
-## 299                                                                    Homeless Camp     27
-## 300                                                      Hotel and Motel Inspections    232
-## 301                                                          Hydrant Repair Referral   1302
-## 302                                                       Icing Caused by Water Leak   1465
-## 303                                                      Illegal Dumping on Property   5317
-## 304                                                  Illegal Dumping on Right of Way  13419
+## 299                                                                    Homeless Camp     34
+## 300                                                      Hotel and Motel Inspections    246
+## 301                                                          Hydrant Repair Referral   1328
+## 302                                                       Icing Caused by Water Leak   1493
+## 303                                                      Illegal Dumping on Property   5489
+## 304                                                  Illegal Dumping on Right of Way  13806
 ## 305                                                           Info Center Escalation      4
 ## 306                                             Information Request-Animal Emergency      1
 ## 307                                       Information Request-Back to School Program      1
@@ -388,51 +388,51 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 319                            Information Request - Assessment for Private Property      3
 ## 320                                         Information Request Storm Damage Pick Up      1
 ## 321                                                       Information Technology-All     24
-## 322                                            Injury or Cruelty Involving an Animal   4866
+## 322                                            Injury or Cruelty Involving an Animal   5239
 ## 323                                                 Integrated Pest Management Class      2
-## 324                                               Issues on City Maintained Property    686
+## 324                                               Issues on City Maintained Property    799
 ## 325                                                           Land Trust Mowing List   2314
-## 326                                                 Landscaping and Blvd/Pkwy Mowing     87
+## 326                                                 Landscaping and Blvd/Pkwy Mowing     88
 ## 327                                                                          Law-All      2
-## 328                                                    Leaf and Brush Pick-up Missed   8823
+## 328                                                    Leaf and Brush Pick-up Missed   9139
 ## 329                                                                Mayors Office-All      1
 ## 330                                           Metal Plate in Street (North of River)      1
 ## 331                                     Metal Plate in Street (South of 47th Street)      3
 ## 332                            Metal Plate in Street (South of River to 47th Street)      1
-## 333                                                            Meter Leak or Problem  16081
+## 333                                                            Meter Leak or Problem  16298
 ## 334                                                        Minor Home Repair Program     16
 ## 335                                                             Mowing City Property    656
 ## 336                                     Mowing of Private Property with No Structure    556
 ## 337                                                        Mowing on Land Trust Lots   1213
-## 338                                                       Mowing on the Right of Way   2204
-## 339                                                                     Mud and silt    254
-## 340                               Neighborhood and Community Services Administration    571
-## 341                                         Neighborhood Preservation Administration    175
-## 342                                        Neighborhood Preservation Priority Review    741
+## 338                                                       Mowing on the Right of Way   2212
+## 339                                                                     Mud and silt    256
+## 340                               Neighborhood and Community Services Administration    573
+## 341                                         Neighborhood Preservation Administration    190
+## 342                                        Neighborhood Preservation Priority Review    748
 ## 343                                                                New Water Service      1
 ## 344                                                          No Known Property Owner     14
 ## 345                                                           No Water Bill Received      5
-## 346                                                                 Noise Complaints   1087
+## 346                                                                 Noise Complaints   1133
 ## 347                                                              Nuisance Violations  41397
 ## 348                         Nuisance Violations on Private Property Vacant Structure   8138
-## 349                                                              Outdoor Air Quality    679
+## 349                                                              Outdoor Air Quality    693
 ## 350                                                                    Paint Program     86
-## 351                                                  Park Maintenance Central Region   1580
-## 352                                                    Park Maintenance North Region   1196
-## 353                                                    Park Maintenance South Region    967
-## 354                                                             Parking Meter Repair    417
+## 351                                                  Park Maintenance Central Region   1618
+## 352                                                    Park Maintenance North Region   1230
+## 353                                                    Park Maintenance South Region    992
+## 354                                                             Parking Meter Repair    435
 ## 355                                                   Parking Meter Repair or Damage     44
-## 356                                                         Parking Ticket Complaint    142
-## 357                                              Parks and Recreation Administration    273
-## 358                                                   Parks Capital Project Referral    272
-## 359                                                         Parks Community Services    158
+## 356                                                         Parking Ticket Complaint    146
+## 357                                              Parks and Recreation Administration    277
+## 358                                                   Parks Capital Project Referral    288
+## 359                                                         Parks Community Services    163
 ## 360                                         Parks Drinking Fountain Central Referral      3
 ## 361                                           Parks Drinking Fountain North Referral      1
 ## 362                                           Parks Drinking Fountain South Referral      3
 ## 363                                    Parks Facility Indoor Plumbing North Referral      2
 ## 364                                            Parks Facility Maintenance C Referral     15
 ## 365                                            Parks Facility Maintenance N Referral     15
-## 366                                              Parks Facility Maintenance Referral    241
+## 366                                              Parks Facility Maintenance Referral    249
 ## 367                                               Parks Facility Maintenance S Refer      7
 ## 368                                 Parks Facility Outdoor Plumbing Central Referral      2
 ## 369                                                  Parks Lighting Central Referral     16
@@ -440,226 +440,227 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## 371                                                    Parks Lighting South Referral      1
 ## 372                                                     Pending Restoration Referral     60
 ## 373                                        Permit for Private Removal of a City Tree      3
-## 374                                    Permit to prune, remove, or plant a City Tree    178
-## 375                                                    PIAC Referral From Department    151
+## 374                                    Permit to prune, remove, or plant a City Tree    182
+## 375                                                    PIAC Referral From Department    154
 ## 376                                                      Pipeline Barricade Referral    145
 ## 377                                                Pipeline Code 1 Repair - Referral    105
 ## 378                                                Pipeline Code 2 Repair - Referral    612
 ## 379                                                Pipeline Code 3 Repair - Referral    402
-## 380                                                  Pipeline Contractor Restoration   2873
+## 380                                                  Pipeline Contractor Restoration   3211
 ## 381                                                  PIPELINE CONTRACTOR RESTORATION    127
 ## 382                                           Pipeline Pavement Restoration Referral   3902
-## 383                                          Pipeline Repair or Restoration Concerns   1566
+## 383                                          Pipeline Repair or Restoration Concerns   1661
 ## 384                                                         Pipeline Repair Referral   2294
 ## 385                                                    PIPELINE RESTORATION CONCERNS      8
 ## 386                                                           Pipeline Turf Referral   2487
-## 387                                                                     Plate Hazard    639
-## 388                                                                  Plate in Street    877
-## 389                                                         Pothole (North of River)   2619
-## 390                       Pothole (River south to 47th Street and East of Blue PKWY)   2438
+## 387                                                                     Plate Hazard    658
+## 388                                                                  Plate in Street    904
+## 389                                                         Pothole (North of River)   2666
+## 390                       Pothole (River south to 47th Street and East of Blue PKWY)   2481
 ## 391                                             Pothole (River south to 47th Street)    476
-## 392                             Pothole (South of 47th Street and West Of Blue PKWY)   4566
+## 392                             Pothole (South of 47th Street and West Of Blue PKWY)   4683
 ## 393                                                   Pothole (South of 47th Street)   1069
 ## 394                                          Pothole (South of River to 47th Street)    215
 ## 395                                         Project Planning for Streets and Traffic     18
 ## 396                                                 Property and Nuisance Violations  15728
 ## 397                                                             Property Maintenance     26
-## 398                                                              Property Violations 103015
-## 399                                                          Public Pool Inspections     75
-## 400                                                       Public Restroom Sanitation     74
-## 401                                                      Public Works Administration   1222
-## 402                                                           Questions or  Comments     30
+## 398                                                              Property Violations 106084
+## 399                                                          Public Pool Inspections     76
+## 400                                                       Public Restroom Sanitation     77
+## 401                                                      Public Works Administration   1237
+## 402                                                           Questions or  Comments     37
 ## 403                                                            Rat Control Education    649
-## 404                                                            Rat Control Treatment   6770
+## 404                                                            Rat Control Treatment   7057
 ## 405                                                              Recycle Bin Damaged    196
 ## 406                                                          Recycle Bin New Service   1257
 ## 407                                                                 Recycling Missed   1981
-## 408                                          Referral for Sewage on Private Property     45
-## 409                                                             Regulated Industries    130
-## 410                                                                 Rural ROW Mowing   1347
-## 411                                                       Salvage Yard Investigation    248
-## 412                                              Service or Curb Box Repair Referral   1330
-## 413                                                       Sewer Assessment Questions    132
-## 414                                         Sewer Cleaning or Deodorizing - Referral      4
-## 415                                 Sewer Cleaning or Repair and Waste Water Concern   7874
-## 416                                            Sewer Contractor Restoration Referral     18
-## 417                                                     Sewer Deodorizing - Referral   2325
-## 418                                       Sewer Investigation and Repairs - Referral    278
-## 419                                                     Sewer Investigation Referral   1325
-## 420                                              Sewer Pavement Restoration Referral    313
-## 421                                                                   Sewer Projects    282
-## 422                                                            Sewer Repair Referral    899
-## 423                                                Sewer Turf Restoration - Referral    203
-## 424                                                          Sewer Water in Basement   1291
-## 425                                               Sewer Water in Basement - Referral   3272
-## 426                                                               Sidewalk Hazardous   1891
-## 427                                                    Sidewalk or Curb in Disrepair    854
-## 428                               Sidewalk projects that are funded by GO Bond funds     39
-## 429                                      Sidewalk to be replaced Due to City Project    719
-## 430                                                                     Sign Missing    449
-## 431                                          Sign Missing or Damaged - Non-emergency   6538
-## 432                                                            Sign Violation Zoning    488
-## 433                                              Sinkhole or Sewer Repair - Referral      8
-## 434                                            SLA0 Streetlight Pole Down or Leaning    869
-## 435                                        SLB0 Streetlight Wire Down or Hanging Arm    205
-## 436                           SLD0 Streetlight Out - Multiple Outage of Five or More   1201
-## 437                                          SLG0 Streetlight Out - Single Light Out   5888
-## 438                                             SLG1 Streetlight Blinking Off and On   1710
-## 439                                              SLG2 Streetlight Burning During Day   1320
-## 440                                       SLG3 Streetlights Out - Two to Four Lights   1198
-## 441                                                   SLP0 Streetlight Miscellaneous    695
-## 442                                 SLQ0 Streetlight Problem Identification Referral      5
-## 443                                                               Smoking Complaints    175
-## 444                                                      Snow and Ice Administration   1278
-## 445                                                          Snow or Ice on Sidewalk    151
-## 446                                           Snow or Ice on Street (North of River)   1820
-## 447               Snow or Ice on Street (South of 47th Street and West of Blue PKWY)    490
-## 448                                     Snow or Ice on Street (South of 47th Street)   1536
-## 449             Snow or Ice on Street (South of River to 47th Street and East of Blu    461
-## 450                            Snow or Ice on Street (South of River to 47th Street)   1149
-## 451                                                 Snow or Ice on Street District 1   6203
-## 452                                                 Snow or Ice on Street District 2   4929
-## 453                                                 Snow or Ice on Street District 3   5615
-## 454                                                     Solid Waste Customer Service  21555
-## 455                                                 Staff Complaints for Solid Waste    114
-## 456                                                Staff Compliments for Solid Waste     18
-## 457                                                                Storm Damage East      7
-## 458                                                               Stormwater Charges      9
-## 459                                                              Stormwater Projects    211
-## 460                                                            Stray Animal Confined   2729
-## 461                                                Street and Traffic Administration    707
-## 462                                                        Street and Traffic Permit    444
-## 463                                                      Street Light Malfunctioning   2459
-## 464                                                                 Street Light New    177
-## 465                                                                 Street Light Out   3513
-## 466                                        Street Light Pole Damage, Rust, Vandalism    680
-## 467                                                Street Light Restoration Referral    477
-## 468                                                       Street Maintenance General     11
-## 469                                  Street Maintenance General (North of the River)   2607
-## 470          Street Maintenance General (South of 47th Street and West of Blue PKWY)   3304
-## 471                                Street Maintenance General (South of 47th Street)    533
-## 472 Street Maintenance General (South of River to 47th Street and East of Blue PKWY)   2619
-## 473                       Street Maintenance General (South of River to 47th Street)    518
-## 474                                                          Street Markings Painted    472
-## 475                                                   Street Preservation or Overlay   2085
-## 476                                                               Street Sign Damage   3029
-## 477                                                              Street Sign Missing    137
-## 478                                                 Street Sweeping (North of River)      1
-## 479                                           Street Sweeping (South of 47th Street)      2
-## 480                                  Street Sweeping (South of River to 47th Street)      2
-## 481                                                         Street Sweeping Citywide    969
-## 482                                                      Tow Services Administration    559
-## 483                                          Traffic Engineering and Traffic Studies   5028
-## 484                                                              Traffic Sign Damage    367
-## 485                                                     Traffic Sign Down or Missing     21
-## 486                                         Traffic Sign Down or Missing - Emergency   3481
-## 487                                                       Traffic Signal Malfunction   6833
-## 488                                                               Traffic Signal Out   1187
-## 489                                      Traffic Signal Pole Damage, Rust, Vandalism    685
-## 490                        Traffic Study for Signs, Reduced Speed, Signal, Crosswalk     74
-## 491                                                        Trahs-Recycle Bin Damaged      4
-## 492                                                    Trahs-Recycle Bin New Service      3
-## 493                                              Trash-Leaf and Brush Pick-up Missed      1
-## 494                                                               Trash-Missed Bulky      1
-## 495                                                           Trash-Recycling Missed   3132
-## 496                                          Trash-Staff Compliments for Solid Waste    247
-## 497                                                           Trash - Missed by City  17411
-## 498                                                     Trash - Missed by Contractor  13087
-## 499                                                 Trash - Multi Unit Investigation    443
-## 500                                                      Trash - Recycle Bin Damaged   1033
-## 501                                                  Trash - Recycle Bin New Service   4966
-## 502                                             Trash - Roll-Out Cart Administration    534
-## 503                                          Trash - Roll-out Cart Damaged or Broken     47
-## 504                                                    Trash - Roll-out Cart Missing   1149
-## 505                                             Trash - Solid Waste Customer Service      3
-## 506                                         Trash - Staff Complaints for Solid Waste   1291
-## 507                                                               Trash Cart Damaged     14
-## 508                                                               Trash Cart Missing    102
-## 509                                                 Trash Missed by Contractor North   5832
-## 510                                                 Trash Missed by Contractor South   8735
-## 511                                                   Trash Multi Unit Investigation    108
-## 512                                         Trash Recycle Missed by Contractor North   2423
-## 513                                         Trash Recycle Missed by Contractor South   2039
-## 514                                                   Trash Recycling Missed by City   3450
-## 515                                             Trash Recycling Missed by Contractor   2893
-## 516                                           Trash Roll Out Cart Damaged or Missing     23
-## 517                                                      Trash Roll Out Cart Missing    194
-## 518                                                              Trash Storm Cleanup    450
-## 519                                  Trash was missed for Tuesday pickup for 2 bags.      1
-## 520                                        Tree Damage to City Tree from Storm Event   3791
-## 521                                               Tree Disease, Insects or Vandalism    325
-## 522                                              Tree Inspection on Private Property     62
-## 523                      Tree Limb and Brush Removal from City Tree - Central Region    343
-## 524                        Tree Limb and Brush Removal from City Tree - North Region    182
-## 525                        Tree Limb and Brush Removal from City Tree - South Region    239
-## 526                                         Tree Limb or Brush Removal for City Tree   1918
-## 527                                                                Tree Live Removal      6
-## 528                                                        Tree Maintenance Seasonal     18
-## 529                                                    Tree or Limb Down Due to Snow    322
-## 530                                                     Tree Planting Central Region    179
-## 531                                                       Tree Planting for New Tree    359
-## 532                                                       Tree Planting North Region    113
-## 533                                                       Tree Planting South Region    108
-## 534                                                           Tree Pruning for Block     44
-## 535                                                      Tree Removal Central Region   1232
-## 536                                                        Tree Removal North Region    662
-## 537                                                      Tree Removal of a City Tree   5618
-## 538                                                        Tree Removal South Region    796
-## 539                                                            Tree Staff Compliment      2
-## 540                                            Tree Staff Customer Service Complaint     74
-## 541                                                 Tree Storm Damage Central Region    588
-## 542                                                   Tree Storm Damage North Region    468
-## 543                                                   Tree Storm Damage South Region    358
-## 544                                                Tree Stump Removal Central Region    135
-## 545                                                 Tree Stump Removal for City Tree    785
-## 546                                                  Tree Stump Removal North Region     54
-## 547                                                  Tree Stump Removal South Region     81
-## 548                                                    Tree Trimming at Intersection    960
-## 549                                                     Tree Trimming Central Region   1333
-## 550                                                      Tree Trimming for City Tree   5737
-## 551                                 Tree Trimming from Electric Wire or Street Light    604
-## 552                                                  Tree Trimming from Street Light    629
-## 553                                                       Tree Trimming North Region    604
-## 554                                                 Tree Trimming on Land Trust Lots     32
-## 555                                                       Tree Trimming South Region    841
-## 556                                              Turn Off Water Service For A Repair     11
-## 557                              Turn On Water Services - Internal Repairs Completed     13
-## 558                                             Turn On Water Services For Paid Bill      1
-## 559                                                   Vacant Structure Open to Entry  13699
-## 560                                                            Valve Repair Referral    857
-## 561                                                         Vehicle Illegally Parked   1751
-## 562                 Vehicle Towed From Lot Without Owner's Permission by Tow Company     15
-## 563                                 Violations and Encroachments on the Right of Way   2414
-## 564                                           Visibility Problems at an Intersection    428
-## 565                                                     Volunteer Inspection Program    358
-## 566                                                     Wastewater Code 1 - Referral     20
-## 567                                                     Wastewater Code 2 - Referral      3
-## 568                                                     Wastewater Code 3 - Referral      2
-## 569                                                             Wastewater Treatment     16
-## 570                                                           Water Bill Admin Tasks      3
-## 571                                                              Water Bill Concerns     42
-## 572                                                 Water Facilities and Engineering      8
-## 573                                      Water Facilities and Stormwater Engineering   1038
-## 574                                                   Water Industrial Waste Control     68
-## 575                                                   Water Leak or Pressure Problem  30628
-## 576                                                                 Water Main Break     50
-## 577                                                              Water Main Projects   1104
-## 578                                                       Water Main Repair Referral   1207
-## 579                                                          Water Payment or Refund      1
-## 580                                                         Water Pipeline Barricade    153
-## 581                                              Water Quality - Laboratory Services   1963
-## 582                                                     Water Repair and Restoration   3242
-## 583                                                       Water Restoration Contract     86
-## 584                                                    Water Services Administration   2189
-## 585                                              Water Services Pavement Restoration    649
-## 586                                                  Water Services Same Day Service      1
-## 587                                                  Water Services Turf Restoration      3
-## 588                                                            Water Theft and Fraud      4
-## 589                                                           Weatherization Program    326
-## 590                                                                 Web Info Request      7
-## 591                                               Web SR - Street Maintenance / Snow      1
-## 592                                                                         Wildlife   2597
-## 593                                                Zoning Inspections and Violations   2653</code></pre>
+## 408                                        Referral for Abatement of Illegal Dumping      1
+## 409                                          Referral for Sewage on Private Property     45
+## 410                                                             Regulated Industries    136
+## 411                                                                 Rural ROW Mowing   1401
+## 412                                                       Salvage Yard Investigation    247
+## 413                                              Service or Curb Box Repair Referral   1351
+## 414                                                       Sewer Assessment Questions    132
+## 415                                         Sewer Cleaning or Deodorizing - Referral      4
+## 416                                 Sewer Cleaning or Repair and Waste Water Concern   7929
+## 417                                            Sewer Contractor Restoration Referral     56
+## 418                                                     Sewer Deodorizing - Referral   2529
+## 419                                       Sewer Investigation and Repairs - Referral    278
+## 420                                                     Sewer Investigation Referral   1435
+## 421                                              Sewer Pavement Restoration Referral    325
+## 422                                                                   Sewer Projects    296
+## 423                                                            Sewer Repair Referral    916
+## 424                                                Sewer Turf Restoration - Referral    203
+## 425                                                          Sewer Water in Basement   1291
+## 426                                               Sewer Water in Basement - Referral   3523
+## 427                                                               Sidewalk Hazardous   1891
+## 428                                                    Sidewalk or Curb in Disrepair    915
+## 429                               Sidewalk projects that are funded by GO Bond funds     39
+## 430                                      Sidewalk to be replaced Due to City Project    733
+## 431                                                                     Sign Missing    449
+## 432                                          Sign Missing or Damaged - Non-emergency   6785
+## 433                                                            Sign Violation Zoning    501
+## 434                                              Sinkhole or Sewer Repair - Referral      8
+## 435                                            SLA0 Streetlight Pole Down or Leaning    909
+## 436                                        SLB0 Streetlight Wire Down or Hanging Arm    213
+## 437                           SLD0 Streetlight Out - Multiple Outage of Five or More   1267
+## 438                                          SLG0 Streetlight Out - Single Light Out   6104
+## 439                                             SLG1 Streetlight Blinking Off and On   1751
+## 440                                              SLG2 Streetlight Burning During Day   1396
+## 441                                       SLG3 Streetlights Out - Two to Four Lights   1259
+## 442                                                   SLP0 Streetlight Miscellaneous    737
+## 443                                 SLQ0 Streetlight Problem Identification Referral      6
+## 444                                                               Smoking Complaints    179
+## 445                                                      Snow and Ice Administration   1287
+## 446                                                          Snow or Ice on Sidewalk    151
+## 447                                           Snow or Ice on Street (North of River)   1820
+## 448               Snow or Ice on Street (South of 47th Street and West of Blue PKWY)    490
+## 449                                     Snow or Ice on Street (South of 47th Street)   1536
+## 450             Snow or Ice on Street (South of River to 47th Street and East of Blu    461
+## 451                            Snow or Ice on Street (South of River to 47th Street)   1149
+## 452                                                 Snow or Ice on Street District 1   6213
+## 453                                                 Snow or Ice on Street District 2   4941
+## 454                                                 Snow or Ice on Street District 3   5626
+## 455                                                     Solid Waste Customer Service  21959
+## 456                                                 Staff Complaints for Solid Waste    114
+## 457                                                Staff Compliments for Solid Waste     18
+## 458                                                                Storm Damage East      7
+## 459                                                               Stormwater Charges     10
+## 460                                                              Stormwater Projects    226
+## 461                                                            Stray Animal Confined   2964
+## 462                                                Street and Traffic Administration    762
+## 463                                                        Street and Traffic Permit    454
+## 464                                                      Street Light Malfunctioning   2459
+## 465                                                                 Street Light New    184
+## 466                                                                 Street Light Out   3513
+## 467                                        Street Light Pole Damage, Rust, Vandalism    680
+## 468                                                Street Light Restoration Referral    477
+## 469                                                       Street Maintenance General     11
+## 470                                  Street Maintenance General (North of the River)   2666
+## 471          Street Maintenance General (South of 47th Street and West of Blue PKWY)   3393
+## 472                                Street Maintenance General (South of 47th Street)    533
+## 473 Street Maintenance General (South of River to 47th Street and East of Blue PKWY)   2692
+## 474                       Street Maintenance General (South of River to 47th Street)    518
+## 475                                                          Street Markings Painted    520
+## 476                                                   Street Preservation or Overlay   2138
+## 477                                                               Street Sign Damage   3062
+## 478                                                              Street Sign Missing    137
+## 479                                                 Street Sweeping (North of River)      1
+## 480                                           Street Sweeping (South of 47th Street)      2
+## 481                                  Street Sweeping (South of River to 47th Street)      2
+## 482                                                         Street Sweeping Citywide   1006
+## 483                                                      Tow Services Administration    573
+## 484                                          Traffic Engineering and Traffic Studies   5187
+## 485                                                              Traffic Sign Damage    372
+## 486                                                     Traffic Sign Down or Missing     21
+## 487                                         Traffic Sign Down or Missing - Emergency   3659
+## 488                                                       Traffic Signal Malfunction   7069
+## 489                                                               Traffic Signal Out   1223
+## 490                                      Traffic Signal Pole Damage, Rust, Vandalism    717
+## 491                        Traffic Study for Signs, Reduced Speed, Signal, Crosswalk     74
+## 492                                                        Trahs-Recycle Bin Damaged      4
+## 493                                                    Trahs-Recycle Bin New Service      3
+## 494                                              Trash-Leaf and Brush Pick-up Missed      1
+## 495                                                               Trash-Missed Bulky      1
+## 496                                                           Trash-Recycling Missed   3132
+## 497                                          Trash-Staff Compliments for Solid Waste    247
+## 498                                                           Trash - Missed by City  17783
+## 499                                                     Trash - Missed by Contractor  13087
+## 500                                                 Trash - Multi Unit Investigation    443
+## 501                                                      Trash - Recycle Bin Damaged   1033
+## 502                                                  Trash - Recycle Bin New Service   4966
+## 503                                             Trash - Roll-Out Cart Administration    534
+## 504                                          Trash - Roll-out Cart Damaged or Broken     47
+## 505                                                    Trash - Roll-out Cart Missing   1149
+## 506                                             Trash - Solid Waste Customer Service      3
+## 507                                         Trash - Staff Complaints for Solid Waste   1311
+## 508                                                               Trash Cart Damaged     14
+## 509                                                               Trash Cart Missing    103
+## 510                                                 Trash Missed by Contractor North   6363
+## 511                                                 Trash Missed by Contractor South   9113
+## 512                                                   Trash Multi Unit Investigation    110
+## 513                                         Trash Recycle Missed by Contractor North   3037
+## 514                                         Trash Recycle Missed by Contractor South   2159
+## 515                                                   Trash Recycling Missed by City   3671
+## 516                                             Trash Recycling Missed by Contractor   2893
+## 517                                           Trash Roll Out Cart Damaged or Missing     23
+## 518                                                      Trash Roll Out Cart Missing    194
+## 519                                                              Trash Storm Cleanup    450
+## 520                                  Trash was missed for Tuesday pickup for 2 bags.      1
+## 521                                        Tree Damage to City Tree from Storm Event   3858
+## 522                                               Tree Disease, Insects or Vandalism    329
+## 523                                              Tree Inspection on Private Property     62
+## 524                      Tree Limb and Brush Removal from City Tree - Central Region    343
+## 525                        Tree Limb and Brush Removal from City Tree - North Region    182
+## 526                        Tree Limb and Brush Removal from City Tree - South Region    239
+## 527                                         Tree Limb or Brush Removal for City Tree   1984
+## 528                                                                Tree Live Removal      6
+## 529                                                        Tree Maintenance Seasonal     19
+## 530                                                    Tree or Limb Down Due to Snow    322
+## 531                                                     Tree Planting Central Region    179
+## 532                                                       Tree Planting for New Tree    416
+## 533                                                       Tree Planting North Region    113
+## 534                                                       Tree Planting South Region    108
+## 535                                                           Tree Pruning for Block     57
+## 536                                                      Tree Removal Central Region   1232
+## 537                                                        Tree Removal North Region    662
+## 538                                                      Tree Removal of a City Tree   5757
+## 539                                                        Tree Removal South Region    796
+## 540                                                            Tree Staff Compliment      2
+## 541                                            Tree Staff Customer Service Complaint     74
+## 542                                                 Tree Storm Damage Central Region    588
+## 543                                                   Tree Storm Damage North Region    468
+## 544                                                   Tree Storm Damage South Region    358
+## 545                                                Tree Stump Removal Central Region    135
+## 546                                                 Tree Stump Removal for City Tree    838
+## 547                                                  Tree Stump Removal North Region     54
+## 548                                                  Tree Stump Removal South Region     81
+## 549                                                    Tree Trimming at Intersection    972
+## 550                                                     Tree Trimming Central Region   1333
+## 551                                                      Tree Trimming for City Tree   6058
+## 552                                 Tree Trimming from Electric Wire or Street Light    604
+## 553                                                  Tree Trimming from Street Light    648
+## 554                                                       Tree Trimming North Region    604
+## 555                                                 Tree Trimming on Land Trust Lots     32
+## 556                                                       Tree Trimming South Region    841
+## 557                                              Turn Off Water Service For A Repair     11
+## 558                              Turn On Water Services - Internal Repairs Completed     13
+## 559                                             Turn On Water Services For Paid Bill      1
+## 560                                                   Vacant Structure Open to Entry  14096
+## 561                                                            Valve Repair Referral    870
+## 562                                                         Vehicle Illegally Parked   1751
+## 563                 Vehicle Towed From Lot Without Owner's Permission by Tow Company     15
+## 564                                 Violations and Encroachments on the Right of Way   2561
+## 565                                           Visibility Problems at an Intersection    428
+## 566                                                     Volunteer Inspection Program    361
+## 567                                                     Wastewater Code 1 - Referral     20
+## 568                                                     Wastewater Code 2 - Referral      3
+## 569                                                     Wastewater Code 3 - Referral      2
+## 570                                                             Wastewater Treatment     16
+## 571                                                           Water Bill Admin Tasks      3
+## 572                                                              Water Bill Concerns     42
+## 573                                                 Water Facilities and Engineering      8
+## 574                                      Water Facilities and Stormwater Engineering   1038
+## 575                                                   Water Industrial Waste Control     69
+## 576                                                   Water Leak or Pressure Problem  31382
+## 577                                                                 Water Main Break     50
+## 578                                                              Water Main Projects   1155
+## 579                                                       Water Main Repair Referral   1212
+## 580                                                          Water Payment or Refund      1
+## 581                                                         Water Pipeline Barricade    153
+## 582                                              Water Quality - Laboratory Services   1985
+## 583                                                     Water Repair and Restoration   3242
+## 584                                                       Water Restoration Contract     86
+## 585                                                    Water Services Administration   2274
+## 586                                              Water Services Pavement Restoration    649
+## 587                                                  Water Services Same Day Service      1
+## 588                                                  Water Services Turf Restoration      3
+## 589                                                            Water Theft and Fraud      4
+## 590                                                           Weatherization Program    326
+## 591                                                                 Web Info Request      7
+## 592                                               Web SR - Street Maintenance / Snow      1
+## 593                                                                         Wildlife   2845
+## 594                                                Zoning Inspections and Violations   2726</code></pre>
 </div>
 </div>
 
