@@ -6,7 +6,6 @@
 
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="generator" content="pandoc" />
 
 
@@ -55,142 +54,146 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="kcmo-311-data-work-groups" class="section level1">
 <h1>KCMO 311 data: Work Groups</h1>
-<p>efg, UMKC Center for Health Insights.<br />2013-12-12. Last modified 2014-07-11.</p>
+<p>UMKC Center for Health Insights<br />Earl F Glynn<br />2013-12-12. Last modified 2015-01-04.</p>
 <div id="frequency-counts-of-kansas-city-mo-311-reports" class="section level2">
 <h2>Frequency Counts of Kansas City, MO 311 Reports</h2>
-<p><a href="https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp">https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp</a><br />2014-07-11</p>
-<p>The current file has 779648 rows.</p>
+<p><a href="https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp">https://data.kcmo.org/311/KCMOPS311-Data/7at3-sxhp</a><br />2015-01-03</p>
+<p>The current file has 819903 rows.</p>
 </div>
 <div id="work-groups" class="section level2">
 <h2>Work Groups</h2>
 <p>Work Groups are thought to be associated only with certain Department(s). A crosstab of WorkGroup by Department would be a bit large, however. The set of WorkGroups for a particular Department could be extracted fairly easily.</p>
 <pre class="r"><code>length(table(d$WORK.GROUP))</code></pre>
-<pre><code>## [1] 123</code></pre>
-<pre class="r"><code>data.frame(table(d$WORK.GROUP))</code></pre>
+<pre><code>## [1] 126</code></pre>
+<pre class="r"><code>x &lt;- data.frame(table(d$WORK.GROUP))
+x &lt;- x[-43,]   # Record 43 is trash, so delete it [2015-01-04]   ## &lt;&lt; check this next time
+x</code></pre>
 <pre><code>##                                                   Var1   Freq
-## 1                                           Aviation--     83
-## 2                  City Managers Office-Action Center-   2143
-## 3       City Managers Office-Action Center-Supervisors    133
-## 4           City Managers Office-Action Center-Support   2775
-## 5                 City Managers Office-Administration-     76
+## 1                                           Aviation--     87
+## 2                  City Managers Office-Action Center-   2275
+## 3       City Managers Office-Action Center-Supervisors    144
+## 4           City Managers Office-Action Center-Support   2834
+## 5                 City Managers Office-Administration-     78
 ## 6               City Managers Office-Capital Projects-    187
 ## 7                           City Managers Office-CIMO-    588
 ## 8           City Managers Office-Emergency Management-     48
-## 9                           City Managers Office-KCPD-     12
-## 10                          City Managers Office-PIAC-    875
-## 11        City Planning and Development-Adminstration-    170
-## 12            City Planning and Development-Elevators-     43
-## 13       City Planning and Development-Investigations-   5394
-## 14  City Planning and Development-Land Develop-Inspect    154
-## 15               Convention and Entertainment Center--     29
-## 16                                              Fire--    293
-## 17                      General Service-City Property-     66
-## 18                General Service-Facility Management-    172
-## 19                                            Health--   1214
-## 20                                 Health-Air Quality-    647
-## 21                Health-Communicable Disease Control-      3
-## 22              Health-Community Environmental Health-    349
-## 23                             Health-Food Protection-   2054
-## 24                               Health-Healthy Homes-    127
-## 25                        Health-Healthy Homes-Bedbugs    239
-## 26                   Health-Lead Poisoning Prevention-     15
-## 27                               Health-Noise Control-   1010
-## 28                                         Health-Rat-   7084
-## 29                             Health-Tobacco Control-    168
-## 30         Housing Community Dev-Property Preservation    342
-## 31                 Information Technology-Email issue-      5
-## 32              Information Technology-ERP Testing-DML     14
-## 33                                  IT-testing emails-      1
-## 34                               KCPD-Parking Control-  15281
-## 35                                 NCS-Administration-    572
-## 36                       NCS-Animal Health and Safety-  78635
-## 37                  NCS-Animal Health and Safety-Admin   2165
-## 38         NCS-Animal Health and Safety-Jackson County   1585
-## 39                            NCS-Dangerous Buildings-  15647
-## 40                              NCS-HazardousStructure   3292
-## 41                          NCS-Neighborhood-Abatement    331
-## 42                      NCS-Neighborhood Preservation- 159202
-## 43             NCS-Neighborhood Preservation-Abatement   1521
-## 44        NCS-Neighborhood Preservation-Administration    184
-## 45                  NCS-Neighborhood Preservation-DART    374
-## 46       NCS-Neighborhood Preservation-Illegal Dumping   2600
-## 47               NCS-Neighborhood Preservation-LT List   4808
-## 48            NCS-Neighborhood Preservation-Open Entry  10735
-## 49              NCS-Neighborhood Preservation-Priority    745
-## 50              NCS-Neighborhood Preservation-Programs      5
-## 51              NCS-Neighborhood Referrals-Supervisors     35
-## 52                           NCS-Neighborhood Services     41
-## 53                                  NCS-NPD-Assesments      3
-## 54                          NCS-Property Preservation-    257
-## 55                           NCS-Regulated Industries-    114
-## 56                                        NCS-Salvage-    248
-## 57                              NCS-Tow-Administration    547
-## 58                                   NCS-Tow Services-   2018
-## 59                         Parks &amp; Rec-Administration-    260
-## 60                 Parks &amp; Rec-Brush Creek-Maintenance     14
-## 61                         Parks &amp; Rec-Central Region-   1461
-## 62                     Parks &amp; Rec-Community Services-    147
-## 63                   Parks &amp; Rec-Facility Maintenance-    308
-## 64                 Parks &amp; Rec-Landscape Services-BRWF     23
-## 65             Parks &amp; Rec-Landscape Services-Forestry  27981
-## 66   Parks &amp; Rec-Landscape Services-Forestry Technical    136
-## 67          Parks &amp; Rec-Landscape Services-Landscaping     72
-## 68              Parks &amp; Rec-Landscape Services-LT List     37
-## 69             Parks &amp; Rec-Landscape Services-ROWWeeds     39
-## 70           Parks &amp; Rec-Landscape Services-Visability    402
-## 71                Parks &amp; Rec-Landscape Services-Weeds   4352
-## 72                           Parks &amp; Rec-North Region-   1163
-## 73                     Parks &amp; Rec-Planning and Design    249
-## 74                           Parks &amp; Rec-South Region-    884
-## 75          Parks &amp; Recreation-Landscape Services-BRWF     11
-## 76                   Public Works- Sidewalks- GO Bonds     39
-## 77                        Public Works-Administration-   1175
-## 78                      Public Works-Capital Projects-    540
-## 79       Public Works-Capital Projects-Traffic Control    340
-## 80       Public Works-Capital Projects-Traffic Permits    492
-## 81           Public Works-Coordination Service-Bicycle      7
-## 82                Public Works-Facilities Maintenance-     15
-## 83                      Public Works-Parking Division-   2275
-## 84            Public Works-Snow and Ice-Administration   1283
-## 85                           Public Works-Solid Waste- 172527
-## 86         Public Works-Solid Waste-Abatement Referral      1
-## 87             Public Works-Solid Waste-Administration  22778
-## 88      Public Works-Street and Traffic-Administration    616
-## 89          Public Works-Street and Traffic-District 1   6777
-## 90          Public Works-Street and Traffic-District 2   8450
-## 91          Public Works-Street and Traffic-District 3  11419
-## 92        Public Works-Street and Traffic-Preservation   2722
-## 93    Public Works-Street and Traffic-Project Planning     18
-## 94        Public Works-Street and Traffic-Rural Mowing   1140
-## 95           Public Works-Street and Traffic-Sidewalks   3266
-## 96               Public Works-Street and Traffic-Signs  14642
-## 97                Public Works-Street and Traffic-Snow  20388
-## 98   Public Works-Street and Traffic-Street Operations    299
-## 99        Public Works-Street and Traffic-Streetlights  19587
-## 100 Public Works-Street and Traffic-Streetlights Staff    152
-## 101    Public Works-Street and Traffic-Traffic Control   5238
-## 102    Public Works-Street and Traffic-Traffic Permits   2030
-## 103    Public Works-Street and Traffic-Traffic Signals   8243
-## 104    Public Works-Streets and Traffic-Administration     31
-## 105  Public Works-Streets and Traffic-Project Planning      1
-## 106                     Water Services-Administration-   2256
-## 107          Water Services-Administration-Restoration    724
-## 108         Water Services-Automatic Meter Reading-VSI    195
-## 109 Water Services-Consumer Services-Back Office Suppo    598
-## 110              Water Services-Engineering-Stormwater    203
-## 111         Water Services-Engineering-Water and Sewer   1292
-## 112                Water Services-Facility-Engineering   1051
-## 113           Water Services-Industrial Waste Control-     89
-## 114                Water Services-Laboratory Services-   1936
-## 115      Water Services-Line Maintenance-Ice Abatement    267
-## 116         Water Services-Line Maintenance-Leaf Brush    577
-## 117           Water Services-Line Maintenance-Pipeline  20976
-## 118        Water Services-Line Maintenance-Restoration   2912
-## 119         Water Services-Line Maintenance-Stormwater  11932
-## 120         Water Services-Line Maintenance-Wastewater  16838
-## 121             Water Services-Meter &amp; Field Services-  43051
-## 122  Water Services-Meter &amp; Field Services-Supervisors    745
-## 123                            Water Services-Reading-   2518</code></pre>
+## 9                           City Managers Office-KCPD-     34
+## 10                          City Managers Office-PIAC-    915
+## 11        City Planning and Development-Adminstration-    180
+## 12       City Planning and Development-Dev Comp-Zoning     78
+## 13            City Planning and Development-Elevators-     48
+## 14       City Planning and Development-Investigations-   5566
+## 15  City Planning and Development-Land Develop-Inspect    161
+## 16    City Planning and Development-Permit Compliance-     64
+## 17               Convention and Entertainment Center--     30
+## 18                                              Fire--    312
+## 19                      General Service-City Property-     66
+## 20                General Service-Facility Management-    186
+## 21                                            Health--   1224
+## 22                                 Health-Air Quality-    690
+## 23                Health-Communicable Disease Control-      3
+## 24              Health-Community Environmental Health-    391
+## 25                             Health-Food Protection-   2296
+## 26                               Health-Healthy Homes-    152
+## 27                        Health-Healthy Homes-Bedbugs    254
+## 28                   Health-Lead Poisoning Prevention-     16
+## 29                               Health-Noise Control-   1113
+## 30                                         Health-Rat-   7697
+## 31                             Health-Tobacco Control-    178
+## 32         Housing Community Dev-Property Preservation    342
+## 33                 Information Technology-Email issue-      5
+## 34              Information Technology-ERP Testing-DML     14
+## 35                                  IT-testing emails-      1
+## 36                               KCPD-Parking Control-  16033
+## 37                                 NCS-Administration-    583
+## 38                       NCS-Animal Health and Safety-  83807
+## 39                  NCS-Animal Health and Safety-Admin   2267
+## 40         NCS-Animal Health and Safety-Jackson County   1585
+## 41                            NCS-Dangerous Buildings-  15938
+## 42                              NCS-HazardousStructure   3278
+## 44                          NCS-Neighborhood-Abatement    331
+## 45                      NCS-Neighborhood Preservation- 168098
+## 46             NCS-Neighborhood Preservation-Abatement   1930
+## 47        NCS-Neighborhood Preservation-Administration    219
+## 48                  NCS-Neighborhood Preservation-DART    401
+## 49       NCS-Neighborhood Preservation-Illegal Dumping   2972
+## 50               NCS-Neighborhood Preservation-LT List   4808
+## 51            NCS-Neighborhood Preservation-Open Entry  11542
+## 52              NCS-Neighborhood Preservation-Priority    753
+## 53              NCS-Neighborhood Preservation-Programs      5
+## 54              NCS-Neighborhood Referrals-Supervisors     35
+## 55                           NCS-Neighborhood Services     41
+## 56                                  NCS-NPD-Assesments      3
+## 57                          NCS-Property Preservation-    258
+## 58                           NCS-Regulated Industries-    129
+## 59                                        NCS-Salvage-    247
+## 60                              NCS-Tow-Administration    571
+## 61                                   NCS-Tow Services-   2018
+## 62                         Parks &amp; Rec-Administration-    272
+## 63                 Parks &amp; Rec-Brush Creek-Maintenance     14
+## 64                         Parks &amp; Rec-Central Region-   1592
+## 65                     Parks &amp; Rec-Community Services-    160
+## 66                   Parks &amp; Rec-Facility Maintenance-    332
+## 67                 Parks &amp; Rec-Landscape Services-BRWF     23
+## 68             Parks &amp; Rec-Landscape Services-Forestry  30439
+## 69   Parks &amp; Rec-Landscape Services-Forestry Technical    290
+## 70          Parks &amp; Rec-Landscape Services-Landscaping     87
+## 71              Parks &amp; Rec-Landscape Services-LT List     37
+## 72             Parks &amp; Rec-Landscape Services-ROWWeeds     39
+## 73           Parks &amp; Rec-Landscape Services-Visability    402
+## 74                Parks &amp; Rec-Landscape Services-Weeds   4417
+## 75                           Parks &amp; Rec-North Region-   1231
+## 76                     Parks &amp; Rec-Planning and Design    291
+## 77                           Parks &amp; Rec-South Region-    963
+## 78          Parks &amp; Recreation-Landscape Services-BRWF     11
+## 79                   Public Works- Sidewalks- GO Bonds     39
+## 80                        Public Works-Administration-   1223
+## 81                      Public Works-Capital Projects-    623
+## 82       Public Works-Capital Projects-Traffic Control    668
+## 83       Public Works-Capital Projects-Traffic Permits    947
+## 84           Public Works-Coordination Service-Bicycle      8
+## 85                Public Works-Facilities Maintenance-     15
+## 86                      Public Works-Parking Division-   2309
+## 87            Public Works-Snow and Ice-Administration   1292
+## 88                           Public Works-Solid Waste- 178760
+## 89         Public Works-Solid Waste-Abatement Referral      2
+## 90             Public Works-Solid Waste-Administration  23596
+## 91      Public Works-Street and Traffic-Administration    718
+## 92          Public Works-Street and Traffic-District 1   7158
+## 93          Public Works-Street and Traffic-District 2   8882
+## 94          Public Works-Street and Traffic-District 3  12000
+## 95        Public Works-Street and Traffic-Preservation   2857
+## 96    Public Works-Street and Traffic-Project Planning     18
+## 97        Public Works-Street and Traffic-Rural Mowing   1395
+## 98           Public Works-Street and Traffic-Sidewalks   3474
+## 99               Public Works-Street and Traffic-Signs  15674
+## 100               Public Works-Street and Traffic-Snow  20421
+## 101  Public Works-Street and Traffic-Street Operations    310
+## 102       Public Works-Street and Traffic-Streetlights  20739
+## 103 Public Works-Street and Traffic-Streetlights Staff    175
+## 104    Public Works-Street and Traffic-Traffic Control   5235
+## 105    Public Works-Street and Traffic-Traffic Permits   2028
+## 106    Public Works-Street and Traffic-Traffic Signals   8828
+## 107    Public Works-Streets and Traffic-Administration     31
+## 108  Public Works-Streets and Traffic-Project Planning      1
+## 109                     Water Services-Administration-   2391
+## 110          Water Services-Administration-Restoration    724
+## 111         Water Services-Automatic Meter Reading-VSI    195
+## 112 Water Services-Consumer Services-Back Office Suppo    675
+## 113              Water Services-Engineering-Stormwater    235
+## 114         Water Services-Engineering-Water and Sewer   1432
+## 115                Water Services-Facility-Engineering   1051
+## 116           Water Services-Industrial Waste Control-     95
+## 117                Water Services-Laboratory Services-   1983
+## 118      Water Services-Line Maintenance-Ice Abatement    295
+## 119         Water Services-Line Maintenance-Leaf Brush    893
+## 120           Water Services-Line Maintenance-Pipeline  21346
+## 121        Water Services-Line Maintenance-Restoration   3599
+## 122         Water Services-Line Maintenance-Stormwater  12589
+## 123         Water Services-Line Maintenance-Wastewater  18152
+## 124             Water Services-Meter &amp; Field Services-  44849
+## 125  Water Services-Meter &amp; Field Services-Supervisors    745
+## 126                            Water Services-Reading-   2518</code></pre>
 </div>
 </div>
 
@@ -206,12 +209,12 @@ $(document).ready(function () {
 
 </script>
 
-<!-- dynamically load mathjax for compatibility with --self-contained -->
+<!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
