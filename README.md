@@ -9,13 +9,6 @@ On Jan. 3, 2015 the CSV file contained over 2.4 million lines and is about 226 M
 
 The various R markdown files produce descriptive stats, which are mostly crosstabs that show frequencies of occurrence by year.
 
-Preview HTML report files:
-
-- [First Look](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-FirstLook.html)
-- [Coordinates](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-Coordinates.html)
-- [Health Data](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-HealthData.html)
-- [Neighborhoods](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-Neighborhoods.html)
-- [Request Type](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-RequestType.html)
-- [Top 250 Addresses](http://htmlpreview.github.io/?https://github.com/EarlGlynn/kcmops311/blob/master/KCMOPS311-Top250.html)
+[View in browser](http://earlglynn.github.io/kcmops311/)
 
 [efg's Computer Lab on GitHub](http://earlglynn.github.io/)
